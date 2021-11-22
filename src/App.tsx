@@ -1,12 +1,16 @@
-import React from 'react';
+import { useState } from 'react';
 import './App.css';
-import ReviewForm from './components/ReviewForm';
+import ReviewForm, { Comment } from './components/ReviewForm';
 
 const App = function App() {
+  const [latestComments, setLatestComments] = useState<Comment[]>([]);
+
+  console.log(latestComments);
+
   return (
     <div className="App">
       <h1>Rate this product</h1>
-      <ReviewForm />
+      <ReviewForm setLatestComments={setLatestComments} />
     </div>
   );
 };
